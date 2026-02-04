@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afya-Chain | Secure Health Data Ecosystem</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+    <script src="js/blockchain.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-shield-heart"></i>
+                <span class="logo-text">Afya<span class="logo-highlight">Chain</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#about">About</a>
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Secure. Interoperable. Patient-Controlled Health Data.</h1>
+                <p class="hero-subtitle">Afya-Chain is a blockchain-powered health data ecosystem designed for Tanzania's healthcare transformation. Your health records, under your control.</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn btn-primary btn-large">Get Started</a>
+                    <a href="#how-it-works" class="btn btn-outline btn-large">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="card-block">
+                        <div class="block-header">
+                            <i class="fas fa-user-shield"></i>
+                            <span>Patient: John M. | NIDA: 199012345678901</span>
+                        </div>
+                        <div class="block-data">
+                            <div class="data-item">
+                                <span>Record ID:</span>
+                                <span>REC_2023_0012</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Access Granted To:</span>
+                                <span>Dr. Sarah K. | Muhimbili Hospital</span>
+                            </div>
+                            <div class="data-item">
+                                <span>Consent Status:</span>
+                                <span class="status-badge granted">ACTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How Afya-Chain Works</h2>
+            <p class="section-subtitle">Three simple steps to secure, interoperable health data</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>1. Register with NIDA</h3>
+                    <p>Patients register using their National ID (NIDA) as a unique identifier. Your identity is securely verified.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <h3>2. Health Records on Blockchain</h3>
+                    <p>Medical records from hospitals and clinics are stored immutably on a decentralized ledger. You own your data.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>3. Consent-Based Access</h3>
+                    <p>You control who can access your records. Doctors request access, and you approve or revoke with one click.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section benefits-section" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefits for All</h2>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <i class="fas fa-user-injured"></i>
+                    <h3>For Patients</h3>
+                    <ul>
+                        <li>Complete control over health data</li>
+                        <li>No more repeated tests</li>
+                        <li>Secure and private records</li>
+                        <li>Accessible anywhere in Tanzania</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-user-md"></i>
+                    <h3>For Doctors</h3>
+                    <ul>
+                        <li>Complete patient history</li>
+                        <li>Quick access with consent</li>
+                        <li>Better diagnosis & treatment</li>
+                        <li>Reduced administrative work</li>
+                    </ul>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-hospital"></i>
+                    <h3>For Healthcare System</h3>
+                    <ul>
+                        <li>Interoperable across facilities</li>
+                        <li>Reduced costs & inefficiencies</li>
+                        <li>Tamper-proof audit trail</li>
+                        <li>Foundation for digital health</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Footer -->
+    <footer class="footer" id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span>Afya<span class="logo-highlight">Chain</span></span>
+                </div>
+                <p class="footer-description">A blockchain-powered interoperable health data ecosystem for Tanzania. Part of the University of Dodoma's Blockchain Technology course project (IA 317).</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#faq">FAQ</a>
+                </div>
+                <p class="copyright">© 2025 Afya-Chain Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

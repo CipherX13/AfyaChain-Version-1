@@ -1,0 +1,110 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/black/Documents/Practice/Cryptography/afya-chain/blockchain/contracts/ConsentManager.sol": {
+      "lastModificationDate": 1770199117699,
+      "contentHash": "9e1b39c28de3d354f6e53d6cae057cec",
+      "sourceName": "contracts/ConsentManager.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "ConsentManager"
+      ]
+    },
+    "/home/black/Documents/Practice/Cryptography/afya-chain/blockchain/contracts/HealthRecord.sol": {
+      "lastModificationDate": 1770195878295,
+      "contentHash": "4acb1cdeefda78f75ea92e34936136e0",
+      "sourceName": "contracts/HealthRecord.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "HealthRecord"
+      ]
+    },
+    "/home/black/Documents/Practice/Cryptography/afya-chain/blockchain/contracts/PatientRegistry.sol": {
+      "lastModificationDate": 1770199031830,
+      "contentHash": "4c644aab10d2af7db04935985a550753",
+      "sourceName": "contracts/PatientRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.19"
+      ],
+      "artifacts": [
+        "PatientRegistry"
+      ]
+    }
+  }
+}

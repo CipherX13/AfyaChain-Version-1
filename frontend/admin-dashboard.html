@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Afya-Chain</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+    <script src="js/blockchain.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span class="logo-text">Afya<span class="logo-highlight">Chain</span></span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>User Management</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-hospital"></i>
+                    <span>Facilities</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-history"></i>
+                    <span>Audit Logs</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar admin-avatar">AD</div>
+                    <div class="user-info">
+                        <h4>Admin User</h4>
+                        <p>Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h1>Admin Dashboard</h1>
+                    <p>System overview and user management</p>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="notification" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">5</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>New doctor registration pending approval</p>
+                                        <span class="notification-time">5 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>System health check completed</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Security audit report available</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Database backup completed successfully</p>
+                                        <span class="notification-time">Yesterday</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Monthly analytics report ready</p>
+                                        <span class="notification-time">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="dashboard-cards">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon patients">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>1,248</h3>
+                    <p>Total Patients</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon doctors">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>342</h3>
+                    <p>Registered Doctors</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon records">
+                            <i class="fas fa-file-medical-alt"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>8,567</h3>
+                    <p>Health Records</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon requests">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>124</h3>
+                    <p>Today's Access Requests</p>
+                </div>
+            </div>
+            
+            <!-- User Management Section -->
+            <section class="users-table">
+                <h2>User Management</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Joined Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-user-id="PAT001">
+                            <td>PAT001</td>
+                            <td>John Michael</td>
+                            <td>john@example.com</td>
+                            <td><span class="user-role role-patient">Patient</span></td>
+                            <td><span class="user-status status-active"></span> Active</td>
+                            <td>2023-01-15</td>
+                            <td>
+                                <button class="btn btn-outline btn-small view-user" data-user-id="PAT001">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                        </tr>
+                        <tr data-user-id="DOC001">
+                            <td>DOC001</td>
+                            <td>Dr. Sarah K.</td>
+                            <td>sarah.k@hospital.com</td>
+                            <td><span class="user-role role-doctor">Doctor</span></td>
+                            <td><span class="user-status status-active"></span> Active</td>
+                            <td>2023-02-20</td>
+                            <td>
+                                <button class="btn btn-outline btn-small view-user" data-user-id="DOC001">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                        </tr>
+                        <tr data-user-id="PAT002">
+                            <td>PAT002</td>
+                            <td>Mary Johnson</td>
+                            <td>mary.j@example.com</td>
+                            <td><span class="user-role role-patient">Patient</span></td>
+                            <td><span class="user-status status-active"></span> Active</td>
+                            <td>2023-03-10</td>
+                            <td>
+                                <button class="btn btn-outline btn-small view-user" data-user-id="PAT002">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                        </tr>
+                        <tr data-user-id="DOC002">
+                            <td>DOC002</td>
+                            <td>Dr. Ahmed M.</td>
+                            <td>ahmed.m@clinic.com</td>
+                            <td><span class="user-role role-doctor">Doctor</span></td>
+                            <td><span class="user-status status-inactive"></span> Inactive</td>
+                            <td>2023-04-05</td>
+                            <td>
+                                <button class="btn btn-outline btn-small view-user" data-user-id="DOC002">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                        </tr>
+                        <tr data-user-id="PAT003">
+                            <td>PAT003</td>
+                            <td>James Wilson</td>
+                            <td>james.w@example.com</td>
+                            <td><span class="user-role role-patient">Patient</span></td>
+                            <td><span class="user-status status-active"></span> Active</td>
+                            <td>2023-05-18</td>
+                            <td>
+                                <button class="btn btn-outline btn-small view-user" data-user-id="PAT003">
+                                    <i class="fas fa-eye"></i> View
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Recent Activity Section -->
+            <section class="recent-activity">
+                <h2>Recent System Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p><strong>New patient registered:</strong> James Wilson (PAT003)</p>
+                            <span class="activity-time">Today at 10:30 AM</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p><strong>Health record added:</strong> Laboratory Results for John Michael</p>
+                            <span class="activity-time">Today at 09:15 AM</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p><strong>Access granted:</strong> Dr. Sarah K. to John Michael's records</p>
+                            <span class="activity-time">Yesterday at 04:45 PM</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="activity-details">
+                            <p><strong>Access revoked:</strong> Dr. Rose N. from Mary Johnson's records</p>
+                            <span class="activity-time">Yesterday at 02:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for viewing user details -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>User Details</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically populated -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

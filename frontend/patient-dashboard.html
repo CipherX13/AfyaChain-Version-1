@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard | Afya-Chain</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+    <script src="js/blockchain.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span class="logo-text">Afya<span class="logo-highlight">Chain</span></span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-user-circle"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Health Records</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Access Control</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-history"></i>
+                    <span>Access History</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">JM</div>
+                    <div class="user-info">
+                        <h4>John Michael</h4>
+                        <p>Patient</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h1>Patient Dashboard</h1>
+                    <p>Welcome back, John. You have full control over your health data.</p>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="notification" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Dr. James L. requested access to your records</p>
+                                        <span class="notification-time">10 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>New lab results added to your records</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Upcoming appointment reminder: Oct 25, 2023</p>
+                                        <span class="notification-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>You granted access to Dr. Sarah K.</p>
+                                        <span class="notification-time">3 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="dashboard-cards">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon patients">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>12</h3>
+                    <p>Medical Records</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon doctors">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>3</h3>
+                    <p>Doctors with Access</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon records">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>2</h3>
+                    <p>Upcoming Appointments</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon requests">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>1</h3>
+                    <p>Pending Requests</p>
+                </div>
+            </div>
+            
+            <!-- Health Records Section -->
+            <section class="health-records">
+                <h2>Recent Health Records</h2>
+                <div class="record-cards">
+                    <div class="record-card">
+                        <div class="record-header">
+                            <div class="record-type">Laboratory Results</div>
+                            <div class="record-date">Oct 15, 2023</div>
+                        </div>
+                        <div class="record-details">
+                            <p><strong>Facility:</strong> Muhimbili National Hospital</p>
+                            <p><strong>Doctor:</strong> Dr. Sarah K.</p>
+                            <p><strong>Summary:</strong> Complete blood count, lipid panel, glucose test</p>
+                            <p><strong>Status:</strong> <span class="status-badge granted">Normal</span></p>
+                        </div>
+                        <div class="record-actions">
+                            <button class="btn btn-outline btn-small view-record" data-record-id="LAB_20231015">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-outline btn-small download-record" data-record-id="LAB_20231015">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="record-card">
+                        <div class="record-header">
+                            <div class="record-type">X-Ray Report</div>
+                            <div class="record-date">Sep 22, 2023</div>
+                        </div>
+                        <div class="record-details">
+                            <p><strong>Facility:</strong> Aga Khan Hospital</p>
+                            <p><strong>Doctor:</strong> Dr. Ahmed M.</p>
+                            <p><strong>Summary:</strong> Chest X-ray, right lung examination</p>
+                            <p><strong>Status:</strong> <span class="status-badge granted">Clear</span></p>
+                        </div>
+                        <div class="record-actions">
+                            <button class="btn btn-outline btn-small view-record" data-record-id="XRAY_20230922">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-outline btn-small download-record" data-record-id="XRAY_20230922">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="record-card">
+                        <div class="record-header">
+                            <div class="record-type">Consultation Notes</div>
+                            <div class="record-date">Aug 10, 2023</div>
+                        </div>
+                        <div class="record-details">
+                            <p><strong>Facility:</strong> Dodoma Regional Hospital</p>
+                            <p><strong>Doctor:</strong> Dr. James L.</p>
+                            <p><strong>Summary:</strong> Annual checkup, prescription renewal</p>
+                            <p><strong>Status:</strong> <span class="status-badge pending">Follow-up needed</span></p>
+                        </div>
+                        <div class="record-actions">
+                            <button class="btn btn-outline btn-small view-record" data-record-id="CONS_20230810">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-outline btn-small download-record" data-record-id="CONS_20230810">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Access Control Section -->
+            <section class="access-control">
+                <h2>Access Control</h2>
+                <p>Manage which doctors can access your health records</p>
+                
+                <div class="access-list">
+                    <div class="access-item">
+                        <div class="doctor-info">
+                            <div class="doctor-avatar">SK</div>
+                            <div>
+                                <h4>Dr. Sarah K.</h4>
+                                <p>Muhimbili National Hospital - Internal Medicine</p>
+                                <p>Last accessed: Oct 16, 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-status">
+                            <span class="status-text granted">Access Granted</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="access-item">
+                        <div class="doctor-info">
+                            <div class="doctor-avatar">AM</div>
+                            <div>
+                                <h4>Dr. Ahmed M.</h4>
+                                <p>Aga Khan Hospital - Radiology</p>
+                                <p>Last accessed: Sep 23, 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-status">
+                            <span class="status-text granted">Access Granted</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="access-item">
+                        <div class="doctor-info">
+                            <div class="doctor-avatar">JL</div>
+                            <div>
+                                <h4>Dr. James L.</h4>
+                                <p>Dodoma Regional Hospital - General Practice</p>
+                                <p>Access requested: Oct 20, 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-status">
+                            <span class="status-text pending">Pending Approval</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="access-item">
+                        <div class="doctor-info">
+                            <div class="doctor-avatar">RN</div>
+                            <div>
+                                <h4>Dr. Rose N.</h4>
+                                <p>KCMC Hospital - Cardiology</p>
+                                <p>Access revoked: Aug 5, 2023</p>
+                            </div>
+                        </div>
+                        
+                        <div class="access-status">
+                            <span class="status-text revoked">Access Revoked</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for viewing records -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Record Details</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically populated -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalCloseBtn">Close</button>
+                <button class="btn btn-primary" id="modalDownloadBtn">
+                    <i class="fas fa-download"></i> Download
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

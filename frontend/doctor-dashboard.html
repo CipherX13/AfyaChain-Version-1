@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard | Afya-Chain</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
+    <script src="js/blockchain.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <i class="fas fa-shield-heart"></i>
+                    <span class="logo-text">Afya<span class="logo-highlight">Chain</span></span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-search"></i>
+                    <span>Search Patients</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-medical"></i>
+                    <span>Accessible Records</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Pending Requests</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-history"></i>
+                    <span>Access History</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar doctor-avatar">SK</div>
+                    <div class="user-info">
+                        <h4>Dr. Sarah K.</h4>
+                        <p>Internal Medicine</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="page-title">
+                    <h1>Doctor Dashboard</h1>
+                    <p>Search for patients and access health records with consent</p>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="notification" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                        <!-- Notification Dropdown -->
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h4>Notifications</h4>
+                                <span class="mark-read">Mark all as read</span>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>John Michael approved your access request</p>
+                                        <span class="notification-time">10 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-file-medical"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>New lab results available for Mary Johnson</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Access request denied by James Wilson</p>
+                                        <span class="notification-time">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-footer">
+                                <a href="#">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html" class="btn btn-outline">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="dashboard-cards">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon patients">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>15</h3>
+                    <p>Patients with Access</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon records">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>47</h3>
+                    <p>Accessible Records</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon requests">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>3</h3>
+                    <p>Pending Requests</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon doctors">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <h3>8</h3>
+                    <p>Today's Appointments</p>
+                </div>
+            </div>
+            
+            <!-- Search Section -->
+            <section class="search-box">
+                <h2>Search Patient</h2>
+                <p>Enter patient's NIDA number to search for health records</p>
+                <form id="patientSearchForm" class="search-container">
+                    <input type="text" id="patientSearch" class="form-control search-input" 
+                           placeholder="Enter NIDA number (e.g., 199012345678901)">
+                    <button type="submit" class="btn btn-primary search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </form>
+            </section>
+            
+            <!-- Results Section -->
+            <section class="patient-results" id="patientResults">
+                <div class="empty-state">
+                    <i class="fas fa-search fa-3x"></i>
+                    <h3>Search for a Patient</h3>
+                    <p>Enter a NIDA number above to search for patient records.</p>
+                </div>
+            </section>
+            
+            <!-- Accessible Records Section -->
+            <section class="health-records">
+                <h2>Recently Accessed Records</h2>
+                <p>Health records you currently have access to</p>
+                <div class="record-cards">
+                    <div class="record-card">
+                        <div class="record-header">
+                            <div class="record-type">Laboratory Results</div>
+                            <div class="record-date">Oct 15, 2023</div>
+                        </div>
+                        <div class="record-details">
+                            <p><strong>Patient:</strong> John Michael</p>
+                            <p><strong>NIDA:</strong> 199012345678901</p>
+                            <p><strong>Summary:</strong> Complete blood count, lipid panel</p>
+                            <p><strong>Status:</strong> <span class="status-badge granted">Access Granted</span></p>
+                        </div>
+                        <div class="record-actions">
+                            <button class="btn btn-outline btn-small view-record" data-record-id="LAB_20231015">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-outline btn-small download-record" data-record-id="LAB_20231015">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="record-card">
+                        <div class="record-header">
+                            <div class="record-type">X-Ray Report</div>
+                            <div class="record-date">Sep 22, 2023</div>
+                        </div>
+                        <div class="record-details">
+                            <p><strong>Patient:</strong> Mary Johnson</p>
+                            <p><strong>NIDA:</strong> 199087654321098</p>
+                            <p><strong>Summary:</strong> Chest X-ray examination</p>
+                            <p><strong>Status:</strong> <span class="status-badge granted">Access Granted</span></p>
+                        </div>
+                        <div class="record-actions">
+                            <button class="btn btn-outline btn-small view-record" data-record-id="XRAY_20230922">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-outline btn-small download-record" data-record-id="XRAY_20230922">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="record-card">
+                        <div class="record-header">
+                            <div class="record-type">Consultation Notes</div>
+                            <div class="record-date">Aug 10, 2023</div>
+                        </div>
+                        <div class="record-details">
+                            <p><strong>Patient:</strong> James Wilson</p>
+                            <p><strong>NIDA:</strong> 199056789012345</p>
+                            <p><strong>Summary:</strong> Annual checkup, prescription renewal</p>
+                            <p><strong>Status:</strong> <span class="status-badge pending">Pending Approval</span></p>
+                        </div>
+                        <div class="record-actions">
+                            <button class="btn btn-outline btn-small view-record" data-record-id="CONS_20230810" disabled>
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-outline btn-small download-record" data-record-id="CONS_20230810" disabled>
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for viewing records -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Record Details</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically populated -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalCloseBtn">Close</button>
+                <button class="btn btn-primary" id="modalDownloadBtn">
+                    <i class="fas fa-download"></i> Download
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
